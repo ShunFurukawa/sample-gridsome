@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sample-gridsome-node
+    command: gridsome develop
+    ports:
+      - 8080:8080
+    volumes:
+      - type: bind
+        source: .
+        target: /var/www/html/sample-gridsome
+      - type: volume
+        source: node-modules
+        target: /var/www/html/sample-gridsome/node_modules
+    tty: true
+    stdin_open: true
+
+volumes:
+  node-modules:
