@@ -13,7 +13,9 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Article',
-        path: './content/articles/**/*.md',
+        baseDir: './content/articles',
+        path: '**/*.md',
+        pathPrefix: '/articles',
         refs: {
           tags: {
             typeName: 'Tag',
