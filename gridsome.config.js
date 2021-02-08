@@ -7,14 +7,19 @@
 module.exports = {
   siteName: 'Gridsome',
   siteDescription: 'Sample Gridsome',
+  pathPrefix: '/blog',
   plugins: [
     {
-      use: '@gridsome/vue-remark',
+      use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Post',
-        baseDir: './content/posts',
-        pathPrefix: '/posts',
-        template: './src/templates/Post.vue'
+        typeName: 'Article',
+        path: './content/articles/**/*.md',
+        refs: {
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
       }
     }
   ]

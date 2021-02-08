@@ -1,15 +1,25 @@
 <template>
   <Layout>
-    {{ $page.posts.edges }}
-    <g-link v-for='post in $page.posts.edges' :key='post.id' :to='post.node.path'>
-      <h2>{{ post.node.title }}</h2>
+    <g-link v-for='article in $page.articles.edges' :key='article.id' :to='article.node.path'>
+      <h2>{{ article.node.title }}</h2>
     </g-link>
   </Layout>
 </template>
 
+<script>
+  export default {
+    metaInfo: {
+      title: 'Index.vue',
+      meta: [
+        { name: 'author', content: 'John Doe' }
+      ]
+    }
+  };
+</script>
+
 <page-query>
   query {
-    posts: allPost {
+   articles: allArticle {
       edges {
         node {
           id
