@@ -7,3 +7,6 @@ tags:
 ---
 
 # Post Content
+
+
+![sample-img](./images/sample.jpg)

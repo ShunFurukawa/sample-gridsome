@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <article>
-      <h1>hoge</h1>
-      {{ $page }}
+      <h1>{{ $page.article.title }}</h1>
+      <article v-html='$page.article.content' />
     </article>
   </Layout>
 </template>
@@ -25,6 +25,7 @@
     article: article(id: $id) {
       title
       description
+      content
       tags {
         id
       }
