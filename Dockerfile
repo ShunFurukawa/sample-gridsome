@@ -4,7 +4,21 @@ WORKDIR /var/www/html/sample-gridsome
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache git
+    apk add --no-cache git \
+    shadow \
+    gcc \
+    musl-dev \
+    autoconf \
+    automake \
+    make \
+    libtool \
+    nasm \
+    tiff \
+    jpeg \
+    zlib \
+    zlib-dev \
+    file \
+    pkgconf
 
 RUN npm i -g @gridsome/cli
 
